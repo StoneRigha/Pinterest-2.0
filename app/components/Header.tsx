@@ -5,9 +5,12 @@ import { HiSearch, HiBell, HiChat } from "react-icons/hi"
 import { useSession, signIn, signOut } from "next-auth/react";
 import { doc, getFirestore, setDoc } from "firebase/firestore";
 import app from "./../Shared/firebaseConfig"
+import { useRouter } from "next/navigation";
 
 function Header() {
   const {data: session} = useSession()
+
+  const router = useRouter();
 
   console.log(session)
 
@@ -34,6 +37,7 @@ function Header() {
       alt="logo" 
       width={50} 
       height={50}
+      priority={true}
       className="hover:bg-gray-600 p-2 rounded-full cursor-pointer"
       />
       <button className="bg-white text-black p-2 rounded-full px-4 hidden md:block">Home</button>
@@ -48,9 +52,11 @@ function Header() {
         {session?.user?
         <Image 
         src={session?.user?.image}
+        onClick={()=>router.push('/'+session)}
         alt="profile image"
         width={50}
         height={50}
+        priority={true}
         className="hover:bg-gray-600 p-2 rounded-full cursor-pointer" 
         />:
         <button className="font-semibold rounded-full px-4" onClick={()=>signIn()}>Login</button>}
