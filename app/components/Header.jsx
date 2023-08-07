@@ -29,6 +29,15 @@ function Header() {
       });
     }
   };
+
+  const onCreateClick =()=>{
+    if(session){
+      router.push('/pin-builder')
+    }else{
+      signIn
+    }
+  }
+
   return (
     <div className="flex gap-3 md:gap-2 items-center p-6">
       <Image
@@ -43,7 +52,7 @@ function Header() {
       <button className="bg-white text-black p-2 rounded-full px-4 hidden md:block">
         Home
       </button>
-      <button className="font-semibold rounded-full px-4" onClick={()=>router.push('/pin-builder')}>Create</button>
+      <button className="font-semibold rounded-full px-4" onClick={()=>onCreateClick()}>Create</button>
       <div className="bg-gray-900 p-3 gap-3 items-center rounded-full w-full hidden md:flex">
         <HiSearch className="text-[25px] text-gray-500" />
         <input
