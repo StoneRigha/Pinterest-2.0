@@ -65,7 +65,7 @@ function Form() {
              className='bg-red-500 p-2
             text-white font-semibold px-3 
             rounded-lg'>
-              {loading?  <Image src="/loading-indicator.png" 
+              {loading?  <Image src="/loading.png" 
                 width={30} 
                 height={30} 
                 alt='loading'
