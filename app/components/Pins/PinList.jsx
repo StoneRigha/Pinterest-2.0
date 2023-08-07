@@ -9,9 +9,9 @@ function PinList({listOfPins}) {
      lg:columns-4 mb-4
      xl:columns-5 space-y-6 mx-auto'>
         {listOfPins.map((item,index)=>(
-            
+            <div key={index}>
                <PinItem pin={item} />
-           
+           </div>
         ))}
     </div>
   )
