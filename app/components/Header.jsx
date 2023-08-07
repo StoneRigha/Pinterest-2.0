@@ -36,6 +36,7 @@ function Header() {
         alt="logo"
         width={50}
         height={50}
+        onClick={()=>router.push('/')}
         priority={true}
         className="hover:bg-gray-600 p-2 rounded-full cursor-pointer"
       />
