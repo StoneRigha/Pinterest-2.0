@@ -42,7 +42,7 @@ function Header() {
       <button className="bg-white text-black p-2 rounded-full px-4 hidden md:block">
         Home
       </button>
-      <button className="font-semibold rounded-full px-4">Create</button>
+      <button className="font-semibold rounded-full px-4" onClick={()=>router.push('/pin-builder')}>Create</button>
       <div className="bg-gray-900 p-3 gap-3 items-center rounded-full w-full hidden md:flex">
         <HiSearch className="text-[25px] text-gray-500" />
         <input
